@@ -2,6 +2,9 @@
     "name": "openai/openai",
     "description": "ai integracao",
     "type": "library",
+    "require": {
+        "openai/openai":"^0.27.0"
+    },
     "license": "MIT",
     "authors": [
         {
