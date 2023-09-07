@@ -9,7 +9,7 @@ include('simple_html_dom.php');
 
 //Include GPT3 integration
 require_once plugin_dir_path(__FILE__) . 'Gpt3Integration.php';
-die('File included!');
+var_dump(class_exists('Gpt3Integration'));  // Ska returnera bool(true) om klassen är tillgänglig
 
 
 $gpt3 = new Gpt3Integration();
