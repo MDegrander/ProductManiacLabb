@@ -1,0 +1,16 @@
+{
+    "name": "pluginmaniacs/openaiplugin",
+    "description": "openai plugin for productmaniacv2",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MDegrander",
+            "email": "128405096+MDegrander@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "openai/openai": "dev-main"
+    }
+}
