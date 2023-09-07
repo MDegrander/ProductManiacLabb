@@ -109,13 +109,18 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("test-result").innerHTML = "Testar anslutning...";
 
         // Anropa PHP-funktionen testConnection via AJAX här
-        jQuery.post(ajaxurl, { "action": "test_openai_connection" }, function(response) {
+        jQuery.post(ajaxurl, { "action": "test_openai_connection" })
+        .done(function(response) {
             // Visa resultatet i statusrutan
             document.getElementById("test-result").innerHTML = "Svar från OpenAI: " + response;
+        })
+        .fail(function() {
+            document.getElementById("test-result").innerHTML = "Ett fel inträffade vid anslutning till servern.";
         });
     });
 });
 </script>';
+
 
 }
 
