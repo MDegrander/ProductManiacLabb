@@ -87,6 +87,14 @@ function openai_settings_page() {
     echo '</div>';
         echo '<button id="test-connection">Testa anslutning</button>';
     echo '<div id="test-result"></div>';
+        echo '<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("test-connection").addEventListener("click", function() {
+            // Anropa PHP-funktionen testConnection via AJAX här
+            // Visa resultatet i en dialogruta eller i div#test-result
+        });
+    });
+    </script>';
 }
 
 //Register OpenAI settings
