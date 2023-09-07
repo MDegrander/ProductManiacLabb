@@ -26,9 +26,20 @@ class Gpt3Integration {
     }
     //Test OpenAI settings
 public function testConnection() {
-    // Anropa OpenAI API här för att testa anslutningen
-    // Om anslutningen är framgångsrik, returnera en positiv respons
-    // Om anslutningen misslyckas, returnera en felmeddelande
+    try {
+        $openai = new \OpenAIAPI(array(
+            "api_key" => $this->api_key
+        ));
+
+        $response = $openai->listEngines();
+        if ($response) {
+            return "Anslutning till OpenAI lyckades.";
+        } else {
+            return "Kunde inte ansluta till OpenAI.";
+        }
+    } catch (Exception $e) {
+        return "Ett fel inträffade: " . $e->getMessage();
+    }
 }
 }
 
