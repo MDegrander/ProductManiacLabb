@@ -8,7 +8,7 @@
 include('simple_html_dom.php');
 
 //Include GPT3 integration
-require_once plugin_dir_path(__FILE__) . 'gpt3integration.php';
+require_once plugin_dir_path(__FILE__) . 'Gpt3Integration.php';
 
 
 $gpt3 = new Gpt3Integration();
