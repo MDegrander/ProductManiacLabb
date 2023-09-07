@@ -85,6 +85,8 @@ function openai_settings_page() {
     submit_button();
     echo '</form>';
     echo '</div>';
+        echo '<button id="test-connection">Testa anslutning</button>';
+    echo '<div id="test-result"></div>';
 }
 
 //Register OpenAI settings
