@@ -11,7 +11,7 @@ include('simple_html_dom.php');
 require_once plugin_dir_path(__FILE__) . 'gpt3integration.php';
 
 
-$gpt3 = new gpt3integration();
+$gpt3 = new Gpt3Integration();
 
 // Använd $gpt3->analyzeText() och $gpt3->rewriteText() där det behövs
 
