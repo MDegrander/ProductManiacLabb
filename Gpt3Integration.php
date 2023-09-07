@@ -38,6 +38,7 @@ public function testConnection() {
             return "Kunde inte ansluta till OpenAI.";
         }
     } catch (Exception $e) {
+        error_log("Ett fel inträffade vid anslutning till OpenAI: " . $e->getMessage());
         return "Ett fel inträffade: " . $e->getMessage();
     }
 }
