@@ -20,9 +20,14 @@ add_action('wp_ajax_test_openai_connection', 'test_openai_connection');
 function test_openai_connection() {
     global $gpt3;
     $response = $gpt3->testConnection();
-    echo json_encode($response);
+    if ($response) {
+        echo json_encode($response);
+    } else {
+        echo json_encode("Ingen respons från testConnection-metoden");
+    }
     wp_die();
 }
+
 
 
 
