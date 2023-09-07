@@ -8,8 +8,7 @@
 include('simple_html_dom.php');
 
 //Include GPT3 integration
-require_once plugin_dir_path(__FILE__) . 'Gpt3Integration.php';
-var_dump(class_exists('Gpt3Integration'));  // Ska returnera bool(true) om klassen är tillgänglig
+require_once WP_PLUGIN_DIR . '/ProductManiacV2/Gpt3Integration.php';
 
 
 $gpt3 = new Gpt3Integration();
