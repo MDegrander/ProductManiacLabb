@@ -2,7 +2,7 @@
 
 require 'vendor/autoload.php';  // Om du använder Composer för pakethantering
 
-class gpt3integration {
+class Gpt3Integration {
 private $api_key;
 
 public function __construct() {
