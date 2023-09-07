@@ -24,5 +24,11 @@ class Gpt3Integration {
         // Här kan du lägga till kod för att anropa OpenAI API
         // och returnera den omskrivna texten
     }
+    //Test OpenAI settings
+public function testConnection() {
+    // Anropa OpenAI API här för att testa anslutningen
+    // Om anslutningen är framgångsrik, returnera en positiv respons
+    // Om anslutningen misslyckas, returnera en felmeddelande
+}
 }
 
