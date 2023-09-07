@@ -15,6 +15,16 @@ $gpt3 = new Gpt3Integration();
 
 // Använd $gpt3->analyzeText() och $gpt3->rewriteText() där det behövs
 
+add_action('wp_ajax_test_openai_connection', 'test_openai_connection');
+
+function test_openai_connection() {
+    global $gpt3;
+    $response = $gpt3->testConnection();
+    echo json_encode($response);
+    wp_die();
+}
+
+
 
 // Add admin menu for the plugin
 add_action('admin_menu', 'product_url_fetch_menu');
@@ -87,14 +97,21 @@ function openai_settings_page() {
     echo '</div>';
         echo '<button id="test-connection">Testa anslutning</button>';
     echo '<div id="test-result"></div>';
-        echo '<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("test-connection").addEventListener("click", function() {
-            // Anropa PHP-funktionen testConnection via AJAX här
-            // Visa resultatet i en dialogruta eller i div#test-result
+echo '<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("test-connection").addEventListener("click", function() {
+        // Visa status i statusrutan
+        document.getElementById("test-result").innerHTML = "Testar anslutning...";
+
+        // Anropa PHP-funktionen testConnection via AJAX här
+        jQuery.post(ajaxurl, { "action": "test_openai_connection" }, function(response) {
+            // Visa resultatet i statusrutan
+            document.getElementById("test-result").innerHTML = "Svar från OpenAI: " + response;
         });
     });
-    </script>';
+});
+</script>';
+
 }
 
 //Register OpenAI settings
